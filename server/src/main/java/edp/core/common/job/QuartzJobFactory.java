@@ -34,7 +34,7 @@ public class QuartzJobFactory implements Job {
     @Override
     public void execute(JobExecutionContext jobExecutionContext) {
         ScheduleJob scheduleJob = (ScheduleJob) jobExecutionContext.getMergedJobDataMap().get(Consts.SCHEDULE_JOB_DATA_KEY);
-        System.out.println("hello guo");
+
         if (scheduleJob.getStartDate().getTime() <= System.currentTimeMillis()
                 && scheduleJob.getEndDate().getTime() >= System.currentTimeMillis()) {
             String jobType = scheduleJob.getJobType().trim();
